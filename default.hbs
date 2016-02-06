@@ -47,11 +47,16 @@
         {{! Everything else gets inserted here }}
         {{{body}}}
 
-        <footer class="site-footer clearfix">
-            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>>
-        </footer>
-
     </div>
+
+
+    <footer class="navbar-default navbar-fixed-bottom">
+      <div class="container-fluid container-footer">
+        <p class="text-muted" href="{{@blog.url}}">Hayatsune &copy; {{date format="YYYY"}}</p>
+      </div>
+    </footer>
+
+
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
