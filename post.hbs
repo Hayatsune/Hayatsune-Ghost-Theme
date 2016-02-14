@@ -21,6 +21,7 @@
                 <h1 class="post-title">{{title}}</h1>
                 <section class="post-meta">
                 {{#author}}
+                    {{#if image}}<img class="author-thumb" src="{{image}}" alt="{{name}}" nopin="nopin" />{{/if}}
                     <p>by <a href="{{url}}">Hayatsune</a></p>
                 {{/author}}
                     <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
@@ -36,7 +37,7 @@
             {{! Everything inside the #author tags pulls data from the author }}
             {{#author}}
 
-                <section class="author">
+                <!--<section class="author">
                     {{#if image}}<img class="author-thumb" src="{{image}}" alt="{{name}}" nopin="nopin" />{{/if}}<h4><a href="{{url}}">{{name}}</a></h4>
 
                     {{#if bio}}
@@ -48,51 +49,45 @@
                         {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
                         {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
                     </div>
-                </section>
+                </section>-->
 
             {{/author}}
 
-                <section class="share">
-                    <h4>Share this post</h4>
-                    <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
-                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                        <span class="hidden">Twitter</span>
-                    </a>
-                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                        <span class="hidden">Facebook</span>
-                    </a>
-                    <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                        <span class="hidden">Google+</span>
-                    </a>
-                </section>
+            <div class="share">
+                <p class="share-text">Share this post<p>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="Hayatsune" data-size="large">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+
+
+            <div id="disqus_thread" class="disqus"></div>
+                <script>
+                /**
+                * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                */
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//hayatsune.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <script id="dsq-count-scr" src="//hayatsune.disqus.com/count.js" async></script>
+                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
             </footer>
 
         </article>
     </main>
-
-
-<!--<aside class="read-next">
-    {{#next_post}}
-    <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/next_post}}
-    {{#prev_post}}
-    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-        <section class="post">
-            <h2>{{title}}</h2>
-            <p>{{excerpt words="19"}}&hellip;</p>
-        </section>
-    </a>
-    {{/prev_post}}
-</aside>-->
-
 {{/post}}
 </div>
 <div class="col-xs-1 col-sm-2 col-md-1 col-lg-3"></div>

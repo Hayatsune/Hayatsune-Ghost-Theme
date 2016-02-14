@@ -29,6 +29,10 @@
    2. General
    ========================================================================== */
 
+   body {
+    font-family: 'Open Sans', sans-serif !important;
+   }
+
    .row {
     margin-left:0px !important;
     margin-right:0px !important;
@@ -36,6 +40,27 @@
 
     a {
       text-decoration: none !important;
+    }
+
+    .fa-twitter {
+      color:#00ACED;
+      -moz-transition: all .2s ease-in;
+      -o-transition: all .2s ease-in;
+      -webkit-transition: all .2s ease-in;
+      transition: all .2s ease-in;
+    }
+
+    .fa-twitter:hover {
+      color:#0083B3;
+    }
+
+    hr {
+      border: 0 !important; 
+      height: 1px !important; 
+      background-image: -webkit-linear-gradient(left, #f0f0f0, #bfbfbf, #f0f0f0) !important;
+      background-image: -moz-linear-gradient(left, #f0f0f0, #bfbfbf, #f0f0f0) !important;
+      background-image: -ms-linear-gradient(left, #f0f0f0, #bfbfbf, #f0f0f0) !important;
+      background-image: -o-linear-gradient(left, #f0f0f0, #bfbfbf, #f0f0f0) !important;
     }
 
 /* ==========================================================================
@@ -100,6 +125,16 @@
       text-align: center;
    }
 
+   .share {
+      text-align:center;
+      padding-bottom:15px;
+   }
+
+   .share-text {
+      font-size:13px;
+      font-weight:bold;
+   }
+
 /* ==========================================================================
    10. Footer
    ========================================================================== */
@@ -124,7 +159,7 @@ body {
 }
 
 .anchor-top {
-  position:absolute;
+  position:fixed;
   right:20px;
   bottom:10px;
   color:#000000;
