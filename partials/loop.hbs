@@ -11,6 +11,7 @@
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
         </header>
         <section class="post-meta">
+        	<img class="post-img" src={{image}} />
             {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
             {{author}}
             {{tags prefix=" on "}}
@@ -20,6 +21,7 @@
             <p>{{excerpt words="100"}}... <a class="read-more" href="{{url}}">Read more</a></p>
         </section>
         <hr>
+        <span class="disqus-comment-count" data-disqus-url="{{url}}"></span>
     </article>
 </div>
 <div class="col-xs-1 col-sm-2 col-md-1 col-lg-3"></div>
